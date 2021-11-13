@@ -5,7 +5,7 @@ const lowercase = (`abcdefghijklmnopqrstuvwxyz`)
 const numbers = (`1234567890`)
 const symbols = (`~!@#$%^&*()`)
 
-let passLength = prompt("Enter desired length of password. Must be a minimum of 8 and max of 128 characters.");
+let passLength = prompt("Enter desired LENGTH of password. Must be a minimum of 8 and max of 128 characters.");
 
 if (passLength < 8 || passLength > 128) {
   alert("Length must be 8 - 128 characters")
@@ -29,6 +29,9 @@ else if (confirmCapital && confirmNum & confirmSym) {
 else if (confirmCapital && confirmLower && confirmNum) {
   var userChoice = uppercase.concat(lowercase, numbers)
 }
+else if (confirmCapital && confirmLower && confirmSym) {
+  var userChoice = uppercase.concat(lowercase,symbols)
+}
 else if (confirmLower && confirmNum && confirmSym) {
   var userChoice = lowercase.concat(numbers, symbols)
 }
@@ -43,9 +46,6 @@ else if (confirmLower && confirmNum) {
 }
 else if (confirmLower && confirmSym) {
   var userChoice = lowercase.concat(symbols)
-}
-else if (confirmLower) {
-  var userChoice = lowercase
 }
 else if (confirmNum && confirmSym) {
   var userChoice = numbers.concat(symbols)
@@ -64,6 +64,9 @@ else if (confirmSym) {
 }
 else if (confirmCapital) {
   var userChoice = uppercase
+}
+else if (confirmLower) {
+  var userChoice = lowercase
 }
 
 let password = ""
